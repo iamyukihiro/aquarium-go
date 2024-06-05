@@ -1,0 +1,9 @@
+services:
+  aquarium:
+    container_name: aquarium
+    image: golang:1.22.4-bookworm
+    volumes:
+      - ../:/go/src/aquarium/
+    tty: true
+    environment:
+      - TZ=Asia/Tokyo
