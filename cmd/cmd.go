@@ -7,7 +7,10 @@ import (
 
 func init() {
 	cobra.OnInitialize()
-	Root.AddCommand()
+	Root.AddCommand(
+		ActionCmd(),
+		InitTankCmd(),
+	)
 	Root.PersistentFlags().IntP(
 		"nest",
 		"n",
@@ -26,6 +29,7 @@ var Root = &cobra.Command{
 	Use:   "aquarium",
 	Short: "Aquarium Simulator",
 	Run: func(cmd *cobra.Command, args []string) {
-		color.Cyanln("Welcome to Aquarium")
+		color.Cyanln("🐟Welcome to Aquarium")
+		ActionCmd().Execute()
 	},
 }

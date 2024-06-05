@@ -6,7 +6,6 @@ import (
 
 func main() {
 	err := cmd.Root.Execute()
-
 	if err != nil {
 		return
 	}

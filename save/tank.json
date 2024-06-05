@@ -1,0 +1,23 @@
+{
+ "name": "テスト",
+ "fishList": [
+  {
+   "name": "メダカ",
+   "breed": {
+    "fishType": "Medaka",
+    "breedNameType": "Hi-medaka"
+   },
+   "conditionLevelType": "Fine",
+   "hungerNameType": "STUFFED"
+  },
+  {
+   "name": "ブラックバス",
+   "breed": {
+    "fishType": "Bass",
+    "breedNameType": "LargeMouse"
+   },
+   "conditionLevelType": "Fine",
+   "hungerNameType": "STUFFED"
+  }
+ ]
+}
