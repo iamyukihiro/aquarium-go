@@ -1,6 +1,7 @@
 package model
 
 import (
+	"aquarium/domein/logic"
 	"aquarium/domein/model/enum"
 	"encoding/json"
 	"os"
@@ -14,11 +15,11 @@ func NewTankManager() *TankManagerImpl {
 }
 
 func (r *TankManagerImpl) Init() {
-	medaka := CreateFish("メダカ", enum.MEDAKA, enum.HI_MEDAKA)
-	bass := CreateFish("ブラックバス", enum.BASS, enum.LARGE_MOUSE)
+	medaka := CreateFish(logic.NewNicknameGenerator().Generate(), enum.MEDAKA, enum.HI_MEDAKA)
+	bass := CreateFish(logic.NewNicknameGenerator().Generate(), enum.BASS, enum.LARGE_MOUSE)
 
 	t := Tank{
-		Name:     "テスト",
+		Name:     "テスト水槽",
 		FishList: []FishImpl{medaka, bass},
 	}
 

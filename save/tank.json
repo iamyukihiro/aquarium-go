@@ -1,8 +1,8 @@
 {
- "name": "テスト",
+ "name": "テスト水槽",
  "fishList": [
   {
-   "name": "メダカ",
+   "name": "マイク",
    "breed": {
     "fishType": "Medaka",
     "breedNameType": "Hi-medaka"
@@ -11,7 +11,7 @@
    "hungerNameType": "STUFFED"
   },
   {
-   "name": "ブラックバス",
+   "name": "ジョニー",
    "breed": {
     "fishType": "Bass",
     "breedNameType": "LargeMouse"
