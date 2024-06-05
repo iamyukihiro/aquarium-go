@@ -10,7 +10,7 @@ import (
 func InitTankCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "InitTankCmd",
-		Short: "Init Tank Cmd",
+		Short: "Init Tank Command",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			prompt := promptui.Select{
 				Label: "⚠ Do you really want to init?",

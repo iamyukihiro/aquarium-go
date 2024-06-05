@@ -10,7 +10,7 @@ import (
 func ActionCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "ActionCmd",
-		Short: "Init Tank Cmd",
+		Short: "Action Command",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			tank := model.NewTankManager().Load()
 			color.Cyanln("TankName: " + tank.Name)

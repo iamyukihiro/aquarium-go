@@ -8,7 +8,7 @@ import (
 func AddFishCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "InitTankCmd",
-		Short: "Init Tank Cmd",
+		Short: "Init Tank Command",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			usecase.AddFish()
 
