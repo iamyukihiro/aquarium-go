@@ -2,7 +2,25 @@
  "name": "テスト水槽",
  "fishList": [
   {
-   "name": "マイク",
+   "name": "たけし",
+   "breed": {
+    "fishType": "Medaka",
+    "breedNameType": "Hi-medaka"
+   },
+   "conditionLevelType": "Fine",
+   "hungerNameType": "STUFFED"
+  },
+  {
+   "name": "たけし",
+   "breed": {
+    "fishType": "Bass",
+    "breedNameType": "LargeMouse"
+   },
+   "conditionLevelType": "Fine",
+   "hungerNameType": "STUFFED"
+  },
+  {
+   "name": "たけし",
    "breed": {
     "fishType": "Medaka",
     "breedNameType": "Hi-medaka"
@@ -13,8 +31,8 @@
   {
    "name": "ジョニー",
    "breed": {
-    "fishType": "Bass",
-    "breedNameType": "LargeMouse"
+    "fishType": "Medaka",
+    "breedNameType": "Hi-medaka"
    },
    "conditionLevelType": "Fine",
    "hungerNameType": "STUFFED"

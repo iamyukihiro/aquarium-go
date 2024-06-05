@@ -10,6 +10,7 @@ func init() {
 	Root.AddCommand(
 		ActionCmd(),
 		InitTankCmd(),
+		AddFishCmd(),
 	)
 	Root.PersistentFlags().IntP(
 		"nest",

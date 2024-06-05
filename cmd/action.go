@@ -22,7 +22,6 @@ func ActionCmd() *cobra.Command {
 					"Add Fish",
 				},
 			}
-
 			_, result, _ := prompt.Run()
 
 			switch result {
