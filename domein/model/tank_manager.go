@@ -18,7 +18,7 @@ func (r *TankManagerImpl) Init() {
 	medaka := CreateFish(logic.NewNicknameGenerator().Generate(), enum.MEDAKA, enum.HI_MEDAKA)
 	bass := CreateFish(logic.NewNicknameGenerator().Generate(), enum.BASS, enum.LARGE_MOUSE)
 
-	t := Tank{
+	t := TankImpl{
 		Name:     "テスト水槽",
 		FishList: []FishImpl{medaka, bass},
 	}
@@ -27,16 +27,16 @@ func (r *TankManagerImpl) Init() {
 	_ = os.WriteFile("save/tank.json", file, 0644)
 }
 
-func (r *TankManagerImpl) Load() Tank {
+func (r *TankManagerImpl) Load() TankImpl {
 	jsonRaw, _ := os.ReadFile("save/tank.json")
 
-	var t Tank
+	var t TankImpl
 	_ = json.Unmarshal(jsonRaw, &t)
 
 	return t
 }
 
-func (r *TankManagerImpl) Save(tank Tank) {
+func (r *TankManagerImpl) Save(tank TankImpl) {
 	file, _ := json.MarshalIndent(tank, "", " ")
 	_ = os.WriteFile("save/tank.json", file, 0644)
 }
