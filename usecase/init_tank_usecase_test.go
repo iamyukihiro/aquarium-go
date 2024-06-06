@@ -20,7 +20,7 @@ func (m *mockTankManager) Save(tank model.TankImpl) {
 	panic("呼ばれません")
 }
 
-func (m *mockTankManager) InjectTankManager() logic.Filer {
+func (m *mockTankManager) InjectFiler() logic.Filer {
 	panic("呼ばれません")
 }
 

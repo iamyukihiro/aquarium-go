@@ -7,7 +7,6 @@ import (
 )
 
 type TankManager interface {
-	InjectTankManager() Filer
 	Init()
 	Load() model.TankImpl
 	Save(tank model.TankImpl)
