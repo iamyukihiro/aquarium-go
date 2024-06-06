@@ -25,7 +25,7 @@ func InitTankCmd() *cobra.Command {
 			switch result {
 			case "Yes":
 				color.Cyanln("bye.")
-				usecase.InitTank()
+				usecase.NewInitTankUseCase().InitTank()
 			default:
 				_ = ActionCmd().Execute()
 			}

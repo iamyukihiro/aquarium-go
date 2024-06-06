@@ -7,10 +7,10 @@ import (
 )
 
 func AddFish() {
-	tank := model.NewTankManager().Load()
+	tank := logic.NewTankManager().Load()
 
 	tank.AddFish(gachaFish())
-	model.NewTankManager().Save(tank)
+	logic.NewTankManager().Save(tank)
 }
 
 func gachaFish() model.FishImpl {

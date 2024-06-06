@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"aquarium/domein/model"
+	"aquarium/domein/logic"
 	"github.com/gookit/color"
 	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
@@ -12,7 +12,7 @@ func ActionCmd() *cobra.Command {
 		Use:   "ActionCmd",
 		Short: "Action Command",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			tank := model.NewTankManager().Load()
+			tank := logic.NewTankManager().Load()
 			color.Cyanln("TankName: " + tank.Name)
 
 			prompt := promptui.Select{
