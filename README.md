@@ -1,5 +1,7 @@
 # aquarium-go
 
+## Overview
+
 This is an application that simulates an aquarium using Golang.
 You can add Medaka (killifish) to the aquarium and view inside the tank.
 
@@ -12,7 +14,7 @@ You can add Medaka (killifish) to the aquarium and view inside the tank.
 - Docker Engine
 - Docker Compose
 
-## Requirement
+## Usage
 
 ### 1. Setup
 
