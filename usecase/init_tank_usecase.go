@@ -8,10 +8,6 @@ type InitTankUseCaseImpl struct {
 	tankManager logic.TankManager
 }
 
-func InjectTankManager() logic.TankManager {
-	return logic.NewTankManager()
-}
-
 func NewInitTankUseCase() *InitTankUseCaseImpl {
 	return &InitTankUseCaseImpl{tankManager: InjectTankManager()}
 }

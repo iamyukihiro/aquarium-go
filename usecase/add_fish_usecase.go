@@ -6,11 +6,18 @@ import (
 	"aquarium/domein/model/enum"
 )
 
-func AddFish() {
-	tank := logic.NewTankManager().Load()
+type AddFishUseCaseImpl struct {
+	tankManager logic.TankManager
+}
 
+func NewAddFishUseCase() *AddFishUseCaseImpl {
+	return &AddFishUseCaseImpl{tankManager: InjectTankManager()}
+}
+
+func (afu *AddFishUseCaseImpl) AddFish() {
+	tank := afu.tankManager.Load()
 	tank.AddFish(gachaFish())
-	logic.NewTankManager().Save(tank)
+	afu.tankManager.Save(tank)
 }
 
 func gachaFish() model.FishImpl {

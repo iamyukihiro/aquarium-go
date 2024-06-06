@@ -9,15 +9,13 @@ import (
 type TankManager interface {
 	InjectTankManager() Filer
 	Init()
+	Load() model.TankImpl
+	Save(tank model.TankImpl)
 }
 
 type TankManagerImpl struct {
 	TankManager
 	filer Filer
-}
-
-func InjectFiler() Filer {
-	return NewFiler()
 }
 
 func NewTankManager() *TankManagerImpl {

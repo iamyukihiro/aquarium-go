@@ -2,6 +2,7 @@ package usecase
 
 import (
 	"aquarium/domein/logic"
+	"aquarium/domein/model"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -9,6 +10,14 @@ import (
 type mockTankManager struct {
 	initCalled bool
 	InitTankUseCaseImpl
+}
+
+func (m *mockTankManager) Load() model.TankImpl {
+	panic("呼ばれません")
+}
+
+func (m *mockTankManager) Save(tank model.TankImpl) {
+	panic("呼ばれません")
 }
 
 func (m *mockTankManager) InjectTankManager() logic.Filer {
