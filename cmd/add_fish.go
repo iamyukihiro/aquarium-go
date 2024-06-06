@@ -10,7 +10,7 @@ func AddFishCmd() *cobra.Command {
 		Use:   "InitTankCmd",
 		Short: "Init Tank Command",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			usecase.AddFish()
+			usecase.NewAddFishUseCase().AddFish()
 
 			return nil
 		},

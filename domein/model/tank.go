@@ -1,11 +1,11 @@
 package model
 
-type Tank struct {
+type TankImpl struct {
 	Name     string     `json:"name"`
 	FishList []FishImpl `json:"fishList"`
 }
 
-func (t *Tank) AddFish(fish FishImpl) {
+func (t *TankImpl) AddFish(fish FishImpl) {
 	newFishList := append(t.FishList, fish)
 	t.FishList = newFishList
 }
