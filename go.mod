@@ -6,7 +6,7 @@ require (
 	github.com/gookit/color v1.5.4
 	github.com/manifoldco/promptui v0.9.0
 	github.com/spf13/cobra v1.8.0
-	github.com/stretchr/testify v1.8.4
+	github.com/stretchr/testify v1.9.0
 )
 
 require (
