@@ -26,3 +26,9 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+
+    - name: Static Check
+      uses: dominikh/staticcheck-action@v1.3.1
+      with:
+        version: "2023.1.7"
+        install-go: false

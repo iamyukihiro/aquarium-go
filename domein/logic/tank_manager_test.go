@@ -25,8 +25,8 @@ func (f *mockFilerImpl) ReadFile() ([]byte, error) {
 }
 
 func getTestTank() model.TankImpl {
-	medaka := model.CreateFish("medaka1", enum.MEDAKA, enum.HI_MEDAKA)
-	bass := model.CreateFish("bass1", enum.BASS, enum.LARGE_MOUSE)
+	medaka := model.CreateFish("medaka1", enum.Medaka, enum.HiMedaka)
+	bass := model.CreateFish("bass1", enum.Bass, enum.LargeMouse)
 	t := model.TankImpl{
 		Name:     "テスト水槽",
 		FishList: []model.FishImpl{medaka, bass},
