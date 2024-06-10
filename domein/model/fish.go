@@ -18,7 +18,7 @@ func CreateFish(name string, fishType enum.FishType, breedNameType enum.BreedNam
 	return FishImpl{
 		Name:               name,
 		Breed:              BreedImpl{FishType: fishType, BreedNameType: breedNameType},
-		ConditionLevelType: enum.FINE,
-		HungerLevelType:    enum.STUFFED,
+		ConditionLevelType: enum.Fine,
+		HungerLevelType:    enum.Stuffed,
 	}
 }

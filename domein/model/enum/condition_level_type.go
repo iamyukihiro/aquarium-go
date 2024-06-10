@@ -3,7 +3,7 @@ package enum
 type ConditionLevelType string
 
 const (
-	FINE = ConditionLevelType("Fine")
-	BAD  = ConditionLevelType("Bad")
-	DEAD = ConditionLevelType("Dead")
+	Fine = ConditionLevelType("Fine")
+	Bad  = ConditionLevelType("Bad")
+	Dead = ConditionLevelType("Dead")
 )

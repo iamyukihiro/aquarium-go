@@ -22,8 +22,8 @@ func (afu *AddFishUseCaseImpl) AddFish() {
 
 func gachaFish() model.FishImpl {
 	if logic.NewProbability().Calc(3) {
-		return model.CreateFish(logic.NewNicknameGenerator().Generate(), enum.BASS, enum.LARGE_MOUSE)
+		return model.CreateFish(logic.NewNicknameGenerator().Generate(), enum.Bass, enum.LargeMouse)
 	}
 
-	return model.CreateFish(logic.NewNicknameGenerator().Generate(), enum.MEDAKA, enum.HI_MEDAKA)
+	return model.CreateFish(logic.NewNicknameGenerator().Generate(), enum.Medaka, enum.HiMedaka)
 }

@@ -3,11 +3,11 @@ package enum
 type BreedNameType string
 
 const (
-	HI_MEDAKA = BreedNameType("Hi-medaka")
-	MIYUKI    = BreedNameType("Miyuki")
-	YOUKIHI   = BreedNameType("Youkihi")
+	HiMedaka = BreedNameType("Hi-medaka")
+	Miyuki   = BreedNameType("Miyuki")
+	Youkihi  = BreedNameType("Youkihi")
 )
 
 const (
-	LARGE_MOUSE = BreedNameType("LargeMouse")
+	LargeMouse = BreedNameType("LargeMouse")
 )

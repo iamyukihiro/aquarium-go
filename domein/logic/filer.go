@@ -12,9 +12,7 @@ type Filer interface {
 	ReadFile() ([]byte, error)
 }
 
-type FilerImpl struct {
-	filer Filer
-}
+type FilerImpl struct{}
 
 func NewFiler() *FilerImpl {
 	return &FilerImpl{}
