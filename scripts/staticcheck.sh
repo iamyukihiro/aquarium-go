@@ -1,0 +1,3 @@
+#!/bin/sh
+# depend:　https://staticcheck.dev/docs/
+staticcheck ./...
