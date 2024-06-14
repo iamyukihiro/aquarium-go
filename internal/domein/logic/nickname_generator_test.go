@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func TestNicknameGeneratorImpl_Generate(t *testing.T) {
+func TestNicknameGenerator_Generate(t *testing.T) {
 	SUT := NewNicknameGenerator()
 
 	rand.NewSource(time.Now().UnixNano())

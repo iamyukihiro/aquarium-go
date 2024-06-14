@@ -1,5 +1,5 @@
 package logic
 
-func InjectFiler() Filer {
+func InjectFiler() FilerInterface {
 	return NewFiler()
 }

@@ -1,8 +1,8 @@
 package logic
 
 import (
-	model2 "aquarium/internal/domein/model"
-	enum2 "aquarium/internal/domein/model/enum"
+	"aquarium/internal/domein/model"
+	"aquarium/internal/domein/model/enum"
 	"encoding/json"
 	"reflect"
 	"testing"
@@ -24,26 +24,26 @@ func (f *mockFilerImpl) ReadFile() ([]byte, error) {
 	return file, nil
 }
 
-func getTestTank() model2.TankImpl {
-	medaka := model2.CreateFish("medaka1", enum2.Medaka, enum2.HiMedaka)
-	bass := model2.CreateFish("bass1", enum2.Bass, enum2.LargeMouse)
-	t := model2.TankImpl{
+func getTestTank() model.Tank {
+	medaka := model.CreateFish("medaka1", enum.Medaka, enum.HiMedaka)
+	bass := model.CreateFish("bass1", enum.Bass, enum.LargeMouse)
+	t := model.Tank{
 		Name:     "テスト水槽",
-		FishList: []model2.FishImpl{medaka, bass},
+		FishList: []model.Fish{medaka, bass},
 	}
 
 	return t
 }
 
-func TestTankManagerImpl_Init(t *testing.T) {
+func TestTankManager_Init(t *testing.T) {
 	t.Skip()
 }
 
-func TestTankManagerImpl_Load(t *testing.T) {
+func TestTankManager_Load(t *testing.T) {
 	expected := getTestTank()
 
 	mockFiler := &mockFilerImpl{}
-	tm := &TankManagerImpl{filer: mockFiler}
+	tm := &TankManager{filer: mockFiler}
 	actual := tm.Load()
 
 	if !reflect.DeepEqual(expected, actual) {

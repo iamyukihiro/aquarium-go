@@ -5,12 +5,12 @@ import (
 	"time"
 )
 
-type NicknameGeneratorImpl struct {
+type NicknameGenerator struct {
 	fishNicknames []string
 }
 
-func NewNicknameGenerator() *NicknameGeneratorImpl {
-	return &NicknameGeneratorImpl{
+func NewNicknameGenerator() *NicknameGenerator {
+	return &NicknameGenerator{
 		fishNicknames: []string{
 			"ジョン",
 			"たけし",
@@ -24,7 +24,7 @@ func NewNicknameGenerator() *NicknameGeneratorImpl {
 	}
 }
 
-func (ng *NicknameGeneratorImpl) Generate() string {
+func (ng *NicknameGenerator) Generate() string {
 	rand.NewSource(time.Now().UnixNano())
 	randomIndex := rand.Intn(len(ng.fishNicknames))
 

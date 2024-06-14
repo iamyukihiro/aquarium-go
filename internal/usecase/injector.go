@@ -4,6 +4,6 @@ import (
 	"aquarium/internal/domein/logic"
 )
 
-func InjectTankManager() logic.TankManager {
+func InjectTankManager() logic.TankManagerInterface {
 	return logic.NewTankManager()
 }
