@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"aquarium/domein/logic"
-	"aquarium/domein/model"
+	"aquarium/internal/domein/logic"
+	"aquarium/internal/domein/model"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

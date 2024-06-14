@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"aquarium/usecase"
+	"aquarium/internal/usecase"
 	"github.com/spf13/cobra"
 )
 
