@@ -1,13 +1,13 @@
 package usecase
 
 import (
-	logic2 "aquarium/internal/domein/logic"
+	"aquarium/internal/domein/logic"
 	"aquarium/internal/domein/model"
-	enum2 "aquarium/internal/domein/model/enum"
+	"aquarium/internal/domein/model/enum"
 )
 
 type AddFishUseCaseImpl struct {
-	tankManager logic2.TankManager
+	tankManager logic.TankManager
 }
 
 func NewAddFishUseCase() *AddFishUseCaseImpl {
@@ -21,9 +21,9 @@ func (afu *AddFishUseCaseImpl) AddFish() {
 }
 
 func gachaFish() model.FishImpl {
-	if logic2.NewProbability().Calc(3) {
-		return model.CreateFish(logic2.NewNicknameGenerator().Generate(), enum2.Bass, enum2.LargeMouse)
+	if logic.NewProbability().Calc(3) {
+		return model.CreateFish(logic.NewNicknameGenerator().Generate(), enum.Bass, enum.LargeMouse)
 	}
 
-	return model.CreateFish(logic2.NewNicknameGenerator().Generate(), enum2.Medaka, enum2.HiMedaka)
+	return model.CreateFish(logic.NewNicknameGenerator().Generate(), enum.Medaka, enum.HiMedaka)
 }
