@@ -8,15 +8,15 @@ import (
 	"testing"
 )
 
-type mockFilerImpl struct {
-	Filer
+type MockFilerImpl struct {
+	MockFiler
 }
 
-func (f *mockFilerImpl) WriteFile(file []byte) error {
+func (f *MockFilerImpl) WriteFile(file []byte) error {
 	return nil
 }
 
-func (f *mockFilerImpl) ReadFile() ([]byte, error) {
+func (f *MockFilerImpl) ReadFile() ([]byte, error) {
 	t := getTestTank()
 
 	file, _ := json.MarshalIndent(t, "", " ")
@@ -42,7 +42,7 @@ func TestTankManager_Init(t *testing.T) {
 func TestTankManager_Load(t *testing.T) {
 	expected := getTestTank()
 
-	mockFiler := &mockFilerImpl{}
+	mockFiler := &MockFilerImpl{}
 	tm := &TankManager{filer: mockFiler}
 	actual := tm.Load()
 
@@ -51,6 +51,6 @@ func TestTankManager_Load(t *testing.T) {
 	}
 }
 
-func TestTankManagerImpl_Save(t *testing.T) {
+func TestTankManager_Save(t *testing.T) {
 	t.Skip()
 }
