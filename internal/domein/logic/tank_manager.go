@@ -1,15 +1,15 @@
 package logic
 
 import (
-	model2 "aquarium/internal/domein/model"
-	enum2 "aquarium/internal/domein/model/enum"
+	"aquarium/internal/domein/model"
+	"aquarium/internal/domein/model/enum"
 	"encoding/json"
 )
 
 type TankManager interface {
 	Init()
-	Load() model2.TankImpl
-	Save(tank model2.TankImpl)
+	Load() model.TankImpl
+	Save(tank model.TankImpl)
 }
 
 type TankManagerImpl struct {
@@ -22,28 +22,28 @@ func NewTankManager() *TankManagerImpl {
 }
 
 func (tm *TankManagerImpl) Init() {
-	medaka := model2.CreateFish(NewNicknameGenerator().Generate(), enum2.Medaka, enum2.HiMedaka)
-	bass := model2.CreateFish(NewNicknameGenerator().Generate(), enum2.Bass, enum2.LargeMouse)
+	medaka := model.CreateFish(NewNicknameGenerator().Generate(), enum.Medaka, enum.HiMedaka)
+	bass := model.CreateFish(NewNicknameGenerator().Generate(), enum.Bass, enum.LargeMouse)
 
-	t := model2.TankImpl{
+	t := model.TankImpl{
 		Name:     "テスト水槽",
-		FishList: []model2.FishImpl{medaka, bass},
+		FishList: []model.FishImpl{medaka, bass},
 	}
 
 	file, _ := json.MarshalIndent(t, "", " ")
 	_ = tm.filer.WriteFile(file)
 }
 
-func (tm *TankManagerImpl) Load() model2.TankImpl {
+func (tm *TankManagerImpl) Load() model.TankImpl {
 	jsonRaw, _ := tm.filer.ReadFile()
 
-	var t model2.TankImpl
+	var t model.TankImpl
 	_ = json.Unmarshal(jsonRaw, &t)
 
 	return t
 }
 
-func (tm *TankManagerImpl) Save(tank model2.TankImpl) {
+func (tm *TankManagerImpl) Save(tank model.TankImpl) {
 	file, _ := json.MarshalIndent(tank, "", " ")
 	_ = tm.filer.WriteFile(file)
 }
