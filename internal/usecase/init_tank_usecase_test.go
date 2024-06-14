@@ -2,34 +2,35 @@ package usecase
 
 import (
 	"aquarium/internal/domein/logic"
+	"aquarium/internal/domein/logic/mock"
 	"aquarium/internal/domein/model"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
-type mockTankManager struct {
+type MockTankManagerInitTankUseCase struct {
+	mocklogic.MockTankManager
 	initCalled bool
-	logic.TankManagerInterface
 }
 
-func (m *mockTankManager) Load() model.Tank {
+func (m *MockTankManagerInitTankUseCase) Load() model.Tank {
 	panic("呼ばれません")
 }
 
-func (m *mockTankManager) Save(tank model.Tank) {
+func (m *MockTankManagerInitTankUseCase) Save(tank model.Tank) {
 	panic("呼ばれません")
 }
 
-func (m *mockTankManager) InjectFiler() logic.Filer {
+func (m *MockTankManagerInitTankUseCase) InjectFiler() logic.Filer {
 	panic("呼ばれません")
 }
 
-func (m *mockTankManager) Init() {
+func (m *MockTankManagerInitTankUseCase) Init() {
 	m.initCalled = true
 }
 
 func TestInitTankUseCase_InitTank(t *testing.T) {
-	mtm := &mockTankManager{}
+	mtm := &MockTankManagerInitTankUseCase{}
 	SUT := &InitTankUseCase{tankManager: mtm}
 	SUT.InitTank()
 
