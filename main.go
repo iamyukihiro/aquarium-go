@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aquarium/cmd"
+	"aquarium/internal/cmd"
 )
 
 func main() {

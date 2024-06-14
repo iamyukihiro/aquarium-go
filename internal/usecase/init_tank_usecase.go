@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"aquarium/domein/logic"
+	"aquarium/internal/domein/logic"
 )
 
 type InitTankUseCaseImpl struct {

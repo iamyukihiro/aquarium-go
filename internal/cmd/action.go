@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"aquarium/domein/logic"
+	"aquarium/internal/domein/logic"
 	"github.com/gookit/color"
 	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"

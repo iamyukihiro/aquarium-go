@@ -1,8 +1,8 @@
 package logic
 
 import (
-	"aquarium/domein/model"
-	"aquarium/domein/model/enum"
+	model2 "aquarium/internal/domein/model"
+	enum2 "aquarium/internal/domein/model/enum"
 	"encoding/json"
 	"reflect"
 	"testing"
@@ -24,12 +24,12 @@ func (f *mockFilerImpl) ReadFile() ([]byte, error) {
 	return file, nil
 }
 
-func getTestTank() model.TankImpl {
-	medaka := model.CreateFish("medaka1", enum.Medaka, enum.HiMedaka)
-	bass := model.CreateFish("bass1", enum.Bass, enum.LargeMouse)
-	t := model.TankImpl{
+func getTestTank() model2.TankImpl {
+	medaka := model2.CreateFish("medaka1", enum2.Medaka, enum2.HiMedaka)
+	bass := model2.CreateFish("bass1", enum2.Bass, enum2.LargeMouse)
+	t := model2.TankImpl{
 		Name:     "テスト水槽",
-		FishList: []model.FishImpl{medaka, bass},
+		FishList: []model2.FishImpl{medaka, bass},
 	}
 
 	return t
