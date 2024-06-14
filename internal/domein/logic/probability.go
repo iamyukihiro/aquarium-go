@@ -5,13 +5,13 @@ import (
 	"time"
 )
 
-type ProbabilityImpl struct{}
+type Probability struct{}
 
-func NewProbability() *ProbabilityImpl {
-	return &ProbabilityImpl{}
+func NewProbability() *Probability {
+	return &Probability{}
 }
 
-func (p *ProbabilityImpl) Calc(percentage int) bool {
+func (p *Probability) Calc(percentage int) bool {
 	rand.NewSource(time.Now().UnixNano())
 	randomNumber := rand.Intn(100) + 1
 

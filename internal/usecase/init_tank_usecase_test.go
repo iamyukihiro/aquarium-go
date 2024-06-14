@@ -9,14 +9,14 @@ import (
 
 type mockTankManager struct {
 	initCalled bool
-	InitTankUseCaseImpl
+	logic.TankManagerInterface
 }
 
-func (m *mockTankManager) Load() model.TankImpl {
+func (m *mockTankManager) Load() model.Tank {
 	panic("呼ばれません")
 }
 
-func (m *mockTankManager) Save(tank model.TankImpl) {
+func (m *mockTankManager) Save(tank model.Tank) {
 	panic("呼ばれません")
 }
 
@@ -30,7 +30,7 @@ func (m *mockTankManager) Init() {
 
 func TestInitTankUseCase_InitTank(t *testing.T) {
 	mtm := &mockTankManager{}
-	SUT := &InitTankUseCaseImpl{tankManager: mtm}
+	SUT := &InitTankUseCase{tankManager: mtm}
 	SUT.InitTank()
 
 	assert.True(t, mtm.initCalled, "MockTankManager の Init() が呼ばれていません")

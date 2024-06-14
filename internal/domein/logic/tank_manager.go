@@ -6,44 +6,44 @@ import (
 	"encoding/json"
 )
 
-type TankManager interface {
+type TankManagerInterface interface {
 	Init()
-	Load() model.TankImpl
-	Save(tank model.TankImpl)
+	Load() model.Tank
+	Save(tank model.Tank)
 }
 
-type TankManagerImpl struct {
-	TankManager
-	filer Filer
+type TankManager struct {
+	TankManagerInterface
+	filer FilerInterface
 }
 
-func NewTankManager() *TankManagerImpl {
-	return &TankManagerImpl{filer: InjectFiler()}
+func NewTankManager() *TankManager {
+	return &TankManager{filer: InjectFiler()}
 }
 
-func (tm *TankManagerImpl) Init() {
+func (tm *TankManager) Init() {
 	medaka := model.CreateFish(NewNicknameGenerator().Generate(), enum.Medaka, enum.HiMedaka)
 	bass := model.CreateFish(NewNicknameGenerator().Generate(), enum.Bass, enum.LargeMouse)
 
-	t := model.TankImpl{
+	t := model.Tank{
 		Name:     "テスト水槽",
-		FishList: []model.FishImpl{medaka, bass},
+		FishList: []model.Fish{medaka, bass},
 	}
 
 	file, _ := json.MarshalIndent(t, "", " ")
 	_ = tm.filer.WriteFile(file)
 }
 
-func (tm *TankManagerImpl) Load() model.TankImpl {
+func (tm *TankManager) Load() model.Tank {
 	jsonRaw, _ := tm.filer.ReadFile()
 
-	var t model.TankImpl
+	var t model.Tank
 	_ = json.Unmarshal(jsonRaw, &t)
 
 	return t
 }
 
-func (tm *TankManagerImpl) Save(tank model.TankImpl) {
+func (tm *TankManager) Save(tank model.Tank) {
 	file, _ := json.MarshalIndent(tank, "", " ")
 	_ = tm.filer.WriteFile(file)
 }

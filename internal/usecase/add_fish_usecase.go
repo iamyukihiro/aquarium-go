@@ -6,21 +6,21 @@ import (
 	"aquarium/internal/domein/model/enum"
 )
 
-type AddFishUseCaseImpl struct {
-	tankManager logic.TankManager
+type AddFishUseCase struct {
+	tankManager logic.TankManagerInterface
 }
 
-func NewAddFishUseCase() *AddFishUseCaseImpl {
-	return &AddFishUseCaseImpl{tankManager: InjectTankManager()}
+func NewAddFishUseCase() *AddFishUseCase {
+	return &AddFishUseCase{tankManager: InjectTankManager()}
 }
 
-func (afu *AddFishUseCaseImpl) AddFish() {
+func (afu *AddFishUseCase) AddFish() {
 	tank := afu.tankManager.Load()
 	tank.AddFish(gachaFish())
 	afu.tankManager.Save(tank)
 }
 
-func gachaFish() model.FishImpl {
+func gachaFish() model.Fish {
 	if logic.NewProbability().Calc(3) {
 		return model.CreateFish(logic.NewNicknameGenerator().Generate(), enum.Bass, enum.LargeMouse)
 	}

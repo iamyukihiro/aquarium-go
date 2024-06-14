@@ -4,14 +4,14 @@ import (
 	"aquarium/internal/domein/logic"
 )
 
-type InitTankUseCaseImpl struct {
-	tankManager logic.TankManager
+type InitTankUseCase struct {
+	tankManager logic.TankManagerInterface
 }
 
-func NewInitTankUseCase() *InitTankUseCaseImpl {
-	return &InitTankUseCaseImpl{tankManager: InjectTankManager()}
+func NewInitTankUseCase() *InitTankUseCase {
+	return &InitTankUseCase{tankManager: InjectTankManager()}
 }
 
-func (itu *InitTankUseCaseImpl) InitTank() {
+func (itu *InitTankUseCase) InitTank() {
 	itu.tankManager.Init()
 }
