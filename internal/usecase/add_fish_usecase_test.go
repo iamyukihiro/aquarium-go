@@ -26,10 +26,6 @@ func (m *MockTankManagerAddFishUseCase) Save(tank model.Tank) {
 	m.SaveCalled = true
 }
 
-func (m *MockTankManagerAddFishUseCase) InjectFiler() logic.Filer {
-	panic("呼ばれません")
-}
-
 func (m *MockTankManagerAddFishUseCase) Init() {
 	m.LoadCalled = true
 }
