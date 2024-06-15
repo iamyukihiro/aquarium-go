@@ -18,7 +18,7 @@ type TankManager struct {
 }
 
 func NewTankManager() *TankManager {
-	return &TankManager{filer: InjectFiler()}
+	return &TankManager{filer: NewFiler()}
 }
 
 func (tm *TankManager) Init() {

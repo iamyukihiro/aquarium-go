@@ -11,7 +11,7 @@ type AddFishUseCase struct {
 }
 
 func NewAddFishUseCase() *AddFishUseCase {
-	return &AddFishUseCase{tankManager: InjectTankManager()}
+	return &AddFishUseCase{tankManager: logic.NewTankManager()}
 }
 
 func (afu *AddFishUseCase) AddFish() {
