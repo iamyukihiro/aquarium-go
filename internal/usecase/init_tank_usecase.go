@@ -9,7 +9,7 @@ type InitTankUseCase struct {
 }
 
 func NewInitTankUseCase() *InitTankUseCase {
-	return &InitTankUseCase{tankManager: InjectTankManager()}
+	return &InitTankUseCase{tankManager: logic.NewTankManager()}
 }
 
 func (itu *InitTankUseCase) InitTank() {
