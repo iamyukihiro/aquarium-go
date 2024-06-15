@@ -10,7 +10,7 @@ type GenderGenerator struct {
 func NewGenderGenerator() *GenderGenerator {
 	return &GenderGenerator{
 		probability: NewProbability(),
-		genderBias:  5,
+		genderBias:  50,
 	}
 }
 
