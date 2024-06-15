@@ -18,6 +18,8 @@ func NewNicknameGenerator() *NicknameGenerator {
 			"マイケル",
 			"ジョニー",
 			"ボブ",
+			"ジョゼフ",
+			"ディーン",
 			"ありさわ",
 			"ゆきひろ",
 		},
