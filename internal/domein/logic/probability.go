@@ -5,7 +5,13 @@ import (
 	"time"
 )
 
-type Probability struct{}
+type ProbabilityInterface interface {
+	Calc(percentage int) bool
+}
+
+type Probability struct {
+	ProbabilityInterface
+}
 
 func NewProbability() *Probability {
 	return &Probability{}

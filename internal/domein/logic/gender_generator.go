@@ -2,14 +2,20 @@ package logic
 
 import "aquarium/internal/domein/model/enum"
 
-type GenderGenerator struct{}
+type GenderGenerator struct {
+	probability ProbabilityInterface
+	genderBias  int
+}
 
 func NewGenderGenerator() *GenderGenerator {
-	return &GenderGenerator{}
+	return &GenderGenerator{
+		probability: NewProbability(),
+		genderBias:  5,
+	}
 }
 
 func (gg *GenderGenerator) Generate() enum.GenderType {
-	if NewProbability().Calc(5) {
+	if gg.probability.Calc(gg.genderBias) {
 		return enum.Male
 	}
 
