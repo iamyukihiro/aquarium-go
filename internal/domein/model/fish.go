@@ -9,6 +9,7 @@ type Fish struct {
 	Breed              Breed                   `json:"breed"`
 	ConditionLevelType enum.ConditionLevelType `json:"conditionLevelType"`
 	HungerLevelType    enum.HungerLevelType    `json:"hungerNameType"`
+	GenderType         enum.GenderType         `json:"genderType"`
 }
 
 type Breed struct {
@@ -16,11 +17,17 @@ type Breed struct {
 	BreedNameType enum.BreedNameType `json:"breedNameType"`
 }
 
-func CreateFish(name string, fishType enum.FishType, breedNameType enum.BreedNameType) Fish {
+func CreateFish(
+	name string,
+	fishType enum.FishType,
+	breedNameType enum.BreedNameType,
+	genderType enum.GenderType,
+) Fish {
 	return Fish{
 		Name:               name,
 		Breed:              Breed{FishType: fishType, BreedNameType: breedNameType},
 		ConditionLevelType: enum.Fine,
 		HungerLevelType:    enum.Stuffed,
+		GenderType:         genderType,
 	}
 }

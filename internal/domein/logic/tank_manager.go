@@ -22,8 +22,8 @@ func NewTankManager() *TankManager {
 }
 
 func (tm *TankManager) Init() {
-	medaka := model.CreateFish(NewNicknameGenerator().Generate(), enum.Medaka, enum.HiMedaka)
-	bass := model.CreateFish(NewNicknameGenerator().Generate(), enum.Bass, enum.LargeMouse)
+	medaka := model.CreateFish(NewNicknameGenerator().Generate(), enum.Medaka, enum.HiMedaka, NewGenderGenerator().Generate())
+	bass := model.CreateFish(NewNicknameGenerator().Generate(), enum.Bass, enum.LargeMouse, NewGenderGenerator().Generate())
 
 	t := model.Tank{
 		Name:     "テスト水槽",
